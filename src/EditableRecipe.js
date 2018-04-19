@@ -3,7 +3,7 @@ import React from 'react';
 import EditableIngredientContainer from './EditableIngredientContainer';
 import './EditableRecipe.css';
 
-const EditableRecipe = ({ ingredients, handleEdit, handleDelete }) => {
+const EditableRecipe = ({ ingredients, ...props }) => {
   return (
     <div className="EditableRecipe">
       {ingredients.map(({ id, qty, component }) => (
@@ -12,8 +12,7 @@ const EditableRecipe = ({ ingredients, handleEdit, handleDelete }) => {
           id={id}
           qty={qty}
           component={component}
-          handleEdit={handleEdit}
-          handleDelete={handleDelete}
+          {...props}
         />
       ))}
     </div>
